@@ -10,12 +10,6 @@ RUN cd /tmp; wget https://packages.wazuh.com/3.x/yum/wazuh-manager-3.2.0-2.x86_6
 RUN yum -y localinstall /tmp/wazuh-manager-3.2.0-2.x86_64.rpm
 
 ADD default_agent /var/ossec/default_agent
-RUN service ossec restart &&\
-  /var/ossec/bin/manage_agents -f /var/ossec/default_agent &&\
-  rm /var/ossec/default_agent &&\
-  service ossec stop &&\
-  echo -n "" /var/ossec/logs/ossec.log
-
 
 #
 # Initialize the data volume configuration
