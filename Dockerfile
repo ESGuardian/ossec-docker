@@ -1,10 +1,9 @@
 FROM centos:latest
-MAINTAINER Support <support@atomicorp.com>
+MAINTAINER Support <esguardian@outlook.com>
 
 RUN yum -y update
-RUN yum -y install wget useradd postfix && yum clean all
+RUN yum -y install wget useradd postfix openssl && yum clean all
 
-# RUN cd /root; NON_INT=1 wget -q -O - https://updates.atomicorp.com/installers/atomic |sh
 RUN cd /tmp; wget https://packages.wazuh.com/3.x/yum/wazuh-manager-3.2.0-2.x86_64.rpm
 
 RUN yum -y localinstall /tmp/wazuh-manager-3.2.0-2.x86_64.rpm

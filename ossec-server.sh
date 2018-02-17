@@ -64,7 +64,7 @@ LAST_OK_DATE=`date +%s`
 
 # Add a dummy agent so remoted can start
 if [ ! -s /var/ossec/etc/client.keys ] ; then
-	/var/ossec/bin/manage_agents -f /var/ossec/default_agent
+	/var/ossec/bin/manage_agents -f /default_agent
 fi
 
 # Start services
