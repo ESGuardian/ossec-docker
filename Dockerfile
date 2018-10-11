@@ -4,9 +4,9 @@ MAINTAINER Support <esguardian@outlook.com>
 RUN yum -y update
 RUN yum -y install wget useradd postfix openssl && yum clean all
 
-RUN cd /tmp; wget https://packages.wazuh.com/3.x/yum/wazuh-manager-3.3.1-1.x86_64.rpm
+RUN cd /tmp; wget https://packages.wazuh.com/3.x/yum/wazuh-manager-3.6.1-1.x86_64.rpm
 
-RUN yum -y localinstall /tmp/wazuh-manager-3.3.1-1.x86_64.rpm
+RUN yum -y localinstall /tmp/wazuh-manager-3.6.1-1.x86_64.rpm
 
 ADD default_agent /var/ossec/default_agent
 
